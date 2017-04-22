@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-eris",     "homepage": "https://github.com/npmdoc/node-npmdoc-eris",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-eris.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [eris (v0.6.0)](https://abal.moe/Eris/)  [![npm package](https://img.shields.io/npm/v/npmdoc-eris.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-eris) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-eris.svg)](https://travis-ci.org/npmdoc/node-npmdoc-eris)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-eris",
+    "keywords": [
+        "documentation",
+        "eris"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_eris.js",
+    "name": "npmdoc-eris",
+    "nameAlias": "npmdoc_eris",
+    "nameOriginal": "npmdoc-eris",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-eris.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
